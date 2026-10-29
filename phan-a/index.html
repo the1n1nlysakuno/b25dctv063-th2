@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thư viện</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Bộ lọc">
+      <header class="brand">
+        <h1>THƯ VIỆN</h1>
+      </header>
+
+      <label class="box">
+        <span>Tìm kiếm</span>
+        <input type="search" id="search" placeholder="Nhập tên sách..." autocomplete="off" />
+      </label>
+
+      <div class="box fav-box">
+        <span>Yêu thích</span>
+        <strong><span id="fav-count">0</span> cuốn</strong>
+      </div>
+
+      <nav class="box genre-box" aria-label="Thể loại">
+        <span>Thể loại</span>
+        <ul id="genre-list" class="genre-list"></ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section aria-label="Danh sách sách">
+        <div id="book-list" class="book-list"></div>
+      </section>
+
+      <section class="add-book" aria-labelledby="add-title">
+        <h2 id="add-title">Thêm sách mới</h2>
+        <form id="book-form" novalidate>
+          <div class="form-row">
+            <label for="f-title">Tên sách</label>
+            <input id="f-title" name="title" type="text" />
+            <small class="error" data-error-for="title"></small>
+          </div>
+          <div class="form-row">
+            <label for="f-author">Tác giả</label>
+            <input id="f-author" name="author" type="text" />
+            <small class="error" data-error-for="author"></small>
+          </div>
+          <div class="form-row">
+            <label for="f-genre">Thể loại</label>
+            <select id="f-genre" name="genre">
+              <option value="">-- Chọn thể loại --</option>
+            </select>
+            <small class="error" data-error-for="genre"></small>
+          </div>
+          <div class="form-row">
+            <label for="f-year">Năm xuất bản</label>
+            <input id="f-year" name="year" type="number" />
+            <small class="error" data-error-for="year"></small>
+          </div>
+          <button type="submit" class="btn btn-primary">Thêm sách</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
